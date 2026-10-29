@@ -1,4 +1,3 @@
-
 /* ==========================================
    ASEMS DARK MODE — FINAL OVERRIDES
    Keep this section at the END of theme.css
@@ -1195,4 +1194,17 @@ html[data-theme="dark"] .asems-confirm-icon.is-neutral { background: #1d4034; co
 *::before,
 *::after {
   border-color: transparent !important;
+}
+
+/* Landing nav: thin line under the navigation bar, same color as the reference screenshot.
+   Drawn with a background, so the global "transparent borders" rules cannot hide it. */
+html body #root .asems-landing .asems-public-shell::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #7a7165;
+  pointer-events: none;
 }
