@@ -1208,3 +1208,8 @@ html body #root .asems-landing .asems-public-shell::after {
   background: #7a7165;
   pointer-events: none;
 }
+
+/* Landing nav: soft dark fade right under the top row (the shade above "Home" in the reference screenshot). */
+html body #root .asems-landing .asems-public-subbar {
+  background-image: linear-gradient(to bottom, rgb(24, 27, 34) 0, rgb(26, 29, 37) 5px, #1b1e27 10px) !important;
+}

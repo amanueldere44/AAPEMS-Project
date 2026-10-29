@@ -174,7 +174,7 @@ function GeneralDashboard({ user }) {
           </h1>
 
           <p className="asems-muted mt-2 max-w-2xl text-sm leading-6">
-            Live evaluation statistics and recent records from ASEMS.
+            Live evaluation statistics and recent records from AAPEMS.
           </p>
         </div>
 
@@ -823,7 +823,7 @@ function RoleDashboard({ role }) {
     cards = [
       { label: 'Summaries received', value: summaries.length, note: `${incomplete} still incomplete`, icon: ClipboardCheck, tone: 'navy' },
       { label: 'Waiting to forward', value: waitingToForward, note: 'Reviewed, not yet sent to the VP office', icon: Clock3, tone: 'gold' },
-      { label: 'Ready to finalize', value: readyToFinalize, note: 'Waiting for the final Form E comments', icon: Activity, tone: 'slate' },
+      { label: 'Ready to finalize', value: readyToFinalize, note: 'Waiting for the final result comments', icon: Activity, tone: 'slate' },
       { label: 'Archived', value: archived, note: 'Archived at all three levels', icon: CheckCircle2, tone: 'teal' },
     ];
     if (waitingToForward > 0) {
@@ -837,7 +837,7 @@ function RoleDashboard({ role }) {
       { label: 'Referrals sent', value: referrals.length, note: `${waitingReferrals} waiting for the office`, icon: Activity, tone: 'slate' },
     ];
     if (readyToFinalize > 0) {
-      steps.push({ text: `${readyToFinalize} summary(ies) are ready for the final Form E comments`, to: '/reports' });
+      steps.push({ text: `${readyToFinalize} summary(ies) are ready for the final report comments`, to: '/reports' });
     }
     if (waitingReferrals > 0) {
       steps.push({ text: `${waitingReferrals} referral(s) are waiting for the concerned office`, to: '/improvement' });
