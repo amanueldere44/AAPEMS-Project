@@ -1,0 +1,488 @@
+﻿ASEMS AUTHORIZATION SOURCE CODE
+Project: C:\Users\DameD\Desktop\3D\ASEMS
+Generated: 10/22/2026 21:07:28
+
+
+================================================================================
+FILE: frontend\src\routes\AppRoutes.jsx
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\components\layout\ProtectedRoute.jsx
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\components\layout\RoleGuard.jsx
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\context\AuthContext.jsx
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\hooks\useAuth.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\hooks\usePermissions.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\utils\permissions.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\components\layout\AppLayout.jsx
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\components\layout\Sidebar.jsx
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\services\apiClient.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\services\authService.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: frontend\src\pages\users\UsersPage.jsx
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\middleware\auth.middleware.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\constants\roles.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\utils\permissions.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\policies\evaluationPermissions.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\app.js
+STATUS: FOUND
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import { env } from './config/env.js';
+import healthRoutes from './routes/health.routes.js';
+import { notFoundHandler } from './middlewares/notFound.js';
+import { errorHandler } from './middlewares/errorHandler.js';
+import authRoutes from './routes/auth.routes.js';
+import formsRoutes from './routes/forms.routes.js';
+import assignmentsRoutes from './routes/assignments.routes.js';
+import evaluationsRoutes from './routes/evaluations.routes.js';
+import dashboardRoutes from './routes/dashboard.routes.js';
+import workflowRoutes from './routes/workflow.routes.js';
+import reportsRoutes from './routes/reports.routes.js';
+import usersRoutes from './routes/users.routes.js';
+import cyclesRoutes from './routes/cycles.routes.js';
+import tasksRoutes from './routes/tasks.routes.js';
+import resultsRoutes from './routes/results.routes.js';
+const app = express();
+
+app.disable('x-powered-by');
+app.use(helmet());
+
+app.use(cors({
+  origin: env.FRONTEND_ORIGIN,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended: false, limit: '1mb' }));
+
+app.use('/api', rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 300,
+  standardHeaders: 'draft-7',
+  legacyHeaders: false,
+}));
+
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      name: 'ASEMS API',
+      docs: 'See docs/api-documentation.md',
+    },
+  });
+});
+
+app.use('/api/health', healthRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/forms', formsRoutes);
+app.use('/api/assignments', assignmentsRoutes);
+app.use('/api/evaluations', evaluationsRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/workflow', workflowRoutes);
+app.use('/api/reports', reportsRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/cycles', cyclesRoutes);
+app.use('/api/tasks', tasksRoutes);
+app.use('/api/results', resultsRoutes);
+app.use(notFoundHandler);
+app.use(errorHandler);
+
+export default app;
+
+================================================================================
+FILE: backend\src\server.js
+STATUS: FOUND
+import app from './app.js';
+import { env } from './config/env.js';
+import {
+  verifyDatabaseConnection,
+  closeDatabaseConnection,
+} from './config/database.js';
+
+let server;
+let isShuttingDown = false;
+
+async function startServer() {
+  try {
+    const database = await verifyDatabaseConnection();
+
+    console.info('ASEMS database connection verified.', {
+      database: database.database,
+    });
+
+    server = app.listen(env.PORT, () => {
+      console.info('ASEMS API is ready.', {
+        port: env.PORT,
+        environment: env.NODE_ENV,
+      });
+    });
+
+    server.on('error', (error) => {
+      console.error('ASEMS HTTP server error.', {
+        code: error.code,
+        message: error.message,
+      });
+
+      void shutdown('SERVER_ERROR', 1);
+    });
+  } catch (error) {
+    console.error('ASEMS startup failed.', {
+      message: error.message,
+      code: error.code,
+    });
+
+    await closeDatabaseConnection().catch(() => {});
+    process.exitCode = 1;
+  }
+}
+
+async function shutdown(signal, exitCode = 0) {
+  if (isShuttingDown) return;
+  isShuttingDown = true;
+
+  console.info(`ASEMS shutdown started: ${signal}`);
+
+  const forceExitTimer = setTimeout(() => {
+    console.error('Graceful shutdown timed out.');
+    process.exit(1);
+  }, 10_000);
+
+  forceExitTimer.unref();
+
+  try {
+    if (server) {
+      await new Promise((resolve, reject) => {
+        server.close((error) => {
+          if (error) reject(error);
+          else resolve();
+        });
+      });
+    }
+
+    await closeDatabaseConnection();
+  } catch (error) {
+    console.error('ASEMS shutdown encountered an error.', {
+      message: error.message,
+    });
+
+    exitCode = 1;
+  } finally {
+    clearTimeout(forceExitTimer);
+    process.exitCode = exitCode;
+  }
+}
+
+process.once('SIGINT', () => {
+  void shutdown('SIGINT');
+});
+
+process.once('SIGTERM', () => {
+  void shutdown('SIGTERM');
+});
+
+void startServer();
+
+================================================================================
+FILE: backend\src\routes\auth.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\routes\users.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\routes\evaluations.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\routes\assignments.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\routes\cycles.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\routes\approvals.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\routes\reports.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\routes\roles.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\controllers\auth.controller.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\controllers\users.controller.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\services\auth.service.js
+STATUS: FOUND
+
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { z } from 'zod';
+
+import { env } from '../config/env.js';
+import { pool } from '../config/database.js';
+import { writeAudit } from '../utils/audit.js';
+
+const loginSchema = z.object({
+  email: z.string().trim().email().max(255),
+  password: z.string().min(1).max(128),
+});
+
+const publicFields = `
+  id, name, email, role, status, phone, gender,
+  date_of_birth, address, id_number, profile_photo,
+  created_at, updated_at
+`;
+
+function publicUser(user) {
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    status: user.status,
+    phone: user.phone ?? null,
+    gender: user.gender ?? null,
+    dateOfBirth: user.date_of_birth ?? null,
+    address: user.address ?? null,
+    idNumber: user.id_number ?? null,
+    profilePhoto: user.profile_photo ?? null,
+    createdAt: user.created_at,
+    updatedAt: user.updated_at,
+  };
+}
+
+function fail(message, statusCode, code) {
+  const error = new Error(message);
+  error.statusCode = statusCode;
+  error.code = code;
+  throw error;
+}
+
+export async function loginUser(input) {
+  const parsed = loginSchema.safeParse(input ?? {});
+
+  if (!parsed.success) {
+    fail('Please provide a valid email and password.', 400, 'VALIDATION_ERROR');
+  }
+
+  const email = parsed.data.email.toLowerCase();
+  const password = parsed.data.password;
+
+  const [rows] = await pool.execute(
+    `SELECT id, name, email, password, role, status
+       FROM users
+      WHERE email = ?
+      LIMIT 1`,
+    [email],
+  );
+
+  const user = rows[0];
+
+  // Use the same response for unknown emails and incorrect passwords.
+  if (!user) {
+    fail('Invalid email or password.', 401, 'INVALID_CREDENTIALS');
+  }
+
+  const passwordMatches = await bcrypt.compare(password, user.password);
+
+  if (!passwordMatches) {
+    fail('Invalid email or password.', 401, 'INVALID_CREDENTIALS');
+  }
+
+  if (user.status !== 'active') {
+    fail('Your account is unavailable.', 403, 'ACCOUNT_UNAVAILABLE');
+  }
+
+  const token = jwt.sign(
+    {},
+    env.JWT_SECRET,
+    {
+      subject: String(user.id),
+      issuer: 'asems-api',
+      audience: 'asems-web',
+      expiresIn: env.JWT_EXPIRES_IN,
+    },
+  );
+
+  await writeAudit(pool, {
+    userId: user.id,
+    action: 'auth.login',
+    entityType: 'user',
+    entityId: user.id,
+    details: {},
+  });
+
+  return {
+    token,
+    user: {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      status: user.status,
+    },
+  };
+}
+
+export async function getCurrentUser(userId) {
+  if (!/^[1-9]\d*$/.test(String(userId))) {
+    fail('Invalid user ID.', 400, 'INVALID_USER_ID');
+  }
+
+  const [rows] = await pool.execute(
+    `SELECT ${publicFields}
+       FROM users
+      WHERE id = ?
+      LIMIT 1`,
+    [userId],
+  );
+
+  if (!rows[0] || rows[0].status !== 'active') {
+    fail('User not found or account unavailable.', 404, 'USER_NOT_FOUND');
+  }
+
+  return publicUser(rows[0]);
+}
+
+
+================================================================================
+FILE: backend\src\repositories\users.repository.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\validators\auth.validator.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\src\config\environment.js
+STATUS: NOT FOUND
+
+================================================================================
+FILE: backend\package.json
+STATUS: FOUND
+{
+  "name": "asems-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "check": "node scripts/check-source.js",
+    "test": "node --test",
+    "migrate": "node scripts/migrate.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.12.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
+
+================================================================================
+FILE: frontend\package.json
+STATUS: FOUND
+{
+  "name": "asems-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "eslint ."
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1",
+    "lucide-react": "^0.468.0",
+    "recharts": "^2.15.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "eslint": "^9.17.0",
+    "@eslint/js": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0"
+  }
+}
+

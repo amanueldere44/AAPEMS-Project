@@ -1,0 +1,170 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   ASEMS — Global Styles
+   Ambo University
+   ========================================================= */
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+
+  color: var(--asems-text, #172a27);
+  background: var(--asems-bg, #f4f6f5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--asems-bg, #f4f6f5);
+  color: var(--asems-text, #172a27);
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+img,
+svg {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Accessible focus indicators */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--asems-accent, #e9bd59);
+  outline-offset: 2px;
+}
+
+/* Shared ASEMS component styles */
+
+@layer components {
+  .panel-card {
+    @apply rounded-xl border border-slate-200/90 bg-white shadow-panel;
+  }
+
+  .icon-button {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-lg
+      text-slate-500 transition hover:bg-slate-100 hover:text-slate-900;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+      bg-navy-900 px-4 py-2.5 text-sm font-medium text-white shadow-sm
+      transition hover:bg-navy-800 focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-gold-500
+      focus-visible:ring-offset-2;
+  }
+
+  .status-pill {
+    @apply inline-flex items-center rounded-full px-2.5 py-1
+      text-[11px] font-medium;
+  }
+
+  .status-green {
+    @apply bg-emerald-50 text-emerald-700;
+  }
+
+  .status-blue {
+    @apply bg-blue-50 text-blue-700;
+  }
+
+  .status-amber {
+    @apply bg-amber-50 text-amber-800;
+  }
+
+  .status-gray {
+    @apply bg-slate-100 text-slate-600;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Requested border-only fix: enforce transparent borders across the UI, including table grids.
+   Keep border widths/styles and all other visual properties unchanged. */
+html body #root *,
+html body #root *::before,
+html body #root *::after {
+  border-color: transparent !important;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}
+html body #root table,
+html body #root table thead,
+html body #root table tbody,
+html body #root table tfoot,
+html body #root table tr,
+html body #root table th,
+html body #root table td,
+html body #root [role="table"],
+html body #root [role="row"],
+html body #root [role="cell"],
+html body #root [role="columnheader"] {
+  border-color: transparent !important;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+}

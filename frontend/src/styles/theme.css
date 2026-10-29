@@ -1,0 +1,1198 @@
+
+/* ==========================================
+   ASEMS DARK MODE — FINAL OVERRIDES
+   Keep this section at the END of theme.css
+   ========================================== */
+
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-theme="dark"] #root {
+  background-color: #0c1917 !important;
+  color: #edf5f1 !important;
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] .asems-app-shell {
+  background-color: #0c1917 !important;
+  color: #edf5f1 !important;
+}
+
+/* Dashboard cards and content panels */
+html[data-theme="dark"] .asems-surface,
+html[data-theme="dark"] .asems-themed-card,
+html[data-theme="dark"] .asems-stat-card,
+html[data-theme="dark"] .asems-dashboard-panel,
+html[data-theme="dark"] .panel-card {
+  background-color: #142522 !important;
+  color: #edf5f1 !important;
+  border-color: #2c453d !important;
+}
+
+/* Prevent hard-coded white backgrounds */
+html[data-theme="dark"] .asems-app-shell .bg-white,
+html[data-theme="dark"] .asems-app-shell .bg-white\/95,
+html[data-theme="dark"] .asems-app-shell .bg-white\/90,
+html[data-theme="dark"] .asems-app-shell .bg-slate-50,
+html[data-theme="dark"] .asems-app-shell .bg-gray-50 {
+  background-color: #142522 !important;
+}
+
+/* Secondary surfaces */
+html[data-theme="dark"] .asems-surface-secondary,
+html[data-theme="dark"] .asems-app-shell .bg-slate-100,
+html[data-theme="dark"] .asems-app-shell .bg-gray-100 {
+  background-color: #1b322d !important;
+  color: #edf5f1 !important;
+}
+
+/* Main text */
+html[data-theme="dark"] .asems-text-primary,
+html[data-theme="dark"] .asems-app-shell .text-slate-950,
+html[data-theme="dark"] .asems-app-shell .text-slate-900,
+html[data-theme="dark"] .asems-app-shell .text-slate-800,
+html[data-theme="dark"] .asems-app-shell .text-slate-700,
+html[data-theme="dark"] .asems-app-shell .text-gray-900,
+html[data-theme="dark"] .asems-app-shell .text-gray-800 {
+  color: #edf5f1 !important;
+}
+
+/* Secondary text */
+html[data-theme="dark"] .asems-muted,
+html[data-theme="dark"] .asems-table-secondary,
+html[data-theme="dark"] .asems-app-shell .text-slate-600,
+html[data-theme="dark"] .asems-app-shell .text-slate-500,
+html[data-theme="dark"] .asems-app-shell .text-slate-400,
+html[data-theme="dark"] .asems-app-shell .text-gray-600,
+html[data-theme="dark"] .asems-app-shell .text-gray-500 {
+  color: #a0b4ab !important;
+}
+
+/* Header and footer */
+html[data-theme="dark"] .asems-header {
+  background-color: #142522 !important;
+  color: #edf5f1 !important;
+  border-color: #2c453d !important;
+}
+
+html[data-theme="dark"] .asems-footer {
+  color: #a0b4ab !important;
+  border-color: #2c453d !important;
+}
+
+/* Sidebar stays dark in both themes */
+html[data-theme="dark"] .asems-app-shell .asems-sidebar {
+  background-color: #102b26 !important;
+  color: #f4f7f6 !important;
+}
+
+html[data-theme="dark"] .asems-sidebar-heading {
+  color: #b0c6bd !important;
+}
+
+html[data-theme="dark"] .asems-sidebar-link {
+  color: #d5e2dc !important;
+}
+
+html[data-theme="dark"] .asems-sidebar-link:hover,
+html[data-theme="dark"] .asems-sidebar-link.is-active {
+  background-color: #24443b !important;
+  color: #ffffff !important;
+}
+
+/* Tables */
+html[data-theme="dark"] .asems-dashboard-table,
+html[data-theme="dark"] .asems-dashboard-table tbody {
+  background-color: #142522 !important;
+  color: #edf5f1 !important;
+}
+
+html[data-theme="dark"] .asems-dashboard-table thead,
+html[data-theme="dark"] .asems-dashboard-table th {
+  background-color: #1b322d !important;
+  color: #c2d2ca !important;
+}
+
+html[data-theme="dark"] .asems-dashboard-table td,
+html[data-theme="dark"] .asems-dashboard-table tr {
+  border-color: #2c453d !important;
+}
+
+html[data-theme="dark"] .asems-dashboard-table tbody tr:hover {
+  background-color: #1b322d !important;
+}
+
+/* Forms and dropdowns */
+html[data-theme="dark"] .asems-app-shell input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="dark"] .asems-app-shell select,
+html[data-theme="dark"] .asems-app-shell textarea {
+  background-color: #10201d !important;
+  color: #edf5f1 !important;
+  border-color: #38554a !important;
+}
+
+html[data-theme="dark"] .asems-app-shell input::placeholder,
+html[data-theme="dark"] .asems-app-shell textarea::placeholder {
+  color: #91a79d !important;
+}
+
+html[data-theme="dark"] .asems-profile-trigger {
+  color: #edf5f1 !important;
+}
+
+html[data-theme="dark"] .asems-profile-trigger:hover {
+  background-color: #1b322d !important;
+}
+
+/* Buttons */
+html[data-theme="dark"] .asems-secondary-button,
+html[data-theme="dark"] .asems-theme-toggle {
+  background-color: #19312b !important;
+  color: #edf5f1 !important;
+  border-color: #38554a !important;
+}
+
+html[data-theme="dark"] .asems-secondary-button:hover,
+html[data-theme="dark"] .asems-theme-toggle:hover {
+  background-color: #24443b !important;
+}
+
+/* Progress bar */
+html[data-theme="dark"] .asems-progress-track {
+  background-color: #263d35 !important;
+}
+
+html[data-theme="dark"] .asems-progress-fill {
+  background-color: #72c6aa !important;
+}
+
+/* Preserve readable status badges */
+html[data-theme="dark"] .status-green {
+  background-color: #153e32 !important;
+  color: #8de0b6 !important;
+}
+
+html[data-theme="dark"] .status-blue {
+  background-color: #193650 !important;
+  color: #a5d5ff !important;
+}
+
+html[data-theme="dark"] .status-amber {
+  background-color: #49371b !important;
+  color: #ffda8a !important;
+}
+
+html[data-theme="dark"] .status-gray {
+  background-color: #293a36 !important;
+  color: #c1cec9 !important;
+}
+
+/* Error panel */
+html[data-theme="dark"] .asems-error-panel {
+  background-color: #351b25 !important;
+  border-color: #743344 !important;
+  color: #fecdd3 !important;
+}
+
+/* Keep links readable */
+html[data-theme="dark"] .asems-dashboard-link {
+  color: #a7dfce !important;
+}
+
+html[data-theme="dark"] .asems-dashboard-link:hover {
+  color: #ffcb3d !important;
+}
+
+/* Avoid white card flashes during theme transitions */
+.asems-surface,
+.asems-themed-card,
+.asems-stat-card,
+.asems-header {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+
+
+/* ==========================================
+   ASEMS LIGHT MODE — READABILITY FIX
+   Append at the very end of theme.css
+   ========================================== */
+
+html[data-theme="light"],
+html[data-theme="light"] body,
+html[data-theme="light"] #root {
+  color-scheme: light;
+  background-color: #f3f6f5;
+  color: #17312b;
+}
+
+html[data-theme="light"] .asems-app-shell {
+  background-color: #f3f6f5;
+  color: #17312b;
+}
+
+/* Cards and panels */
+html[data-theme="light"] .asems-surface,
+html[data-theme="light"] .asems-themed-card,
+html[data-theme="light"] .asems-stat-card,
+html[data-theme="light"] .asems-dashboard-panel,
+html[data-theme="light"] .panel-card {
+  background-color: #ffffff;
+  color: #17312b;
+  border-color: #dce6e1;
+}
+
+/* Main headings and text */
+html[data-theme="light"] .asems-text-primary,
+html[data-theme="light"] .asems-app-shell .text-slate-950,
+html[data-theme="light"] .asems-app-shell .text-slate-900,
+html[data-theme="light"] .asems-app-shell .text-slate-800,
+html[data-theme="light"] .asems-app-shell .text-slate-700,
+html[data-theme="light"] .asems-app-shell .text-gray-900,
+html[data-theme="light"] .asems-app-shell .text-gray-800 {
+  color: #17312b;
+}
+
+html[data-theme="light"] .asems-muted,
+html[data-theme="light"] .asems-table-secondary,
+html[data-theme="light"] .asems-app-shell .text-slate-600,
+html[data-theme="light"] .asems-app-shell .text-slate-500,
+html[data-theme="light"] .asems-app-shell .text-gray-600,
+html[data-theme="light"] .asems-app-shell .text-gray-500 {
+  color: #60766e;
+}
+
+/* Header and profile */
+html[data-theme="light"] .asems-header {
+  background-color: #ffffff;
+  color: #17312b;
+  border-color: #dce6e1;
+}
+
+html[data-theme="light"] .asems-profile-trigger {
+  color: #17312b;
+}
+
+html[data-theme="light"] .asems-profile-trigger:hover {
+  background-color: #edf3f0;
+}
+
+/* Tables */
+html[data-theme="light"] .asems-dashboard-table {
+  background-color: #ffffff;
+  color: #17312b;
+}
+
+html[data-theme="light"] .asems-dashboard-table thead,
+html[data-theme="light"] .asems-dashboard-table th {
+  background-color: #edf3f0;
+  color: #60766e;
+}
+
+html[data-theme="light"] .asems-dashboard-table td,
+html[data-theme="light"] .asems-dashboard-table tr {
+  border-color: #dce6e1;
+}
+
+html[data-theme="light"] .asems-dashboard-table tbody tr:hover {
+  background-color: #f3f6f5;
+}
+
+/* Inputs and dropdowns */
+html[data-theme="light"] .asems-app-shell input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="light"] .asems-app-shell select,
+html[data-theme="light"] .asems-app-shell textarea {
+  background-color: #ffffff;
+  color: #17312b;
+  border-color: #cbd9d2;
+}
+
+html[data-theme="light"] .asems-app-shell input::placeholder,
+html[data-theme="light"] .asems-app-shell textarea::placeholder {
+  color: #60766e;
+}
+
+/* Buttons */
+html[data-theme="light"] .asems-secondary-button,
+html[data-theme="light"] .asems-theme-toggle {
+  background-color: #ffffff;
+  color: #17312b;
+  border-color: #dce6e1;
+}
+
+html[data-theme="light"] .asems-secondary-button:hover,
+html[data-theme="light"] .asems-theme-toggle:hover {
+  background-color: #edf3f0;
+}
+
+/* Dashboard links */
+html[data-theme="light"] .asems-dashboard-link {
+  color: #123b33;
+}
+
+html[data-theme="light"] .asems-dashboard-link:hover {
+  color: #946200;
+}
+
+/* Progress bar */
+html[data-theme="light"] .asems-progress-track {
+  background-color: #e4ebe7;
+}
+
+html[data-theme="light"] .asems-progress-fill {
+  background-color: #0f9f86;
+}
+
+/* Status badges */
+html[data-theme="light"] .status-green {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+html[data-theme="light"] .status-blue {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+html[data-theme="light"] .status-amber {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+html[data-theme="light"] .status-gray {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+/* Sidebar remains dark in both themes */
+html[data-theme="light"] .asems-app-shell .asems-sidebar {
+  background-color: #102b26;
+  color: #f4f7f6;
+}
+
+html[data-theme="light"] .asems-sidebar-heading {
+  color: #b0c6bd;
+}
+
+html[data-theme="light"] .asems-sidebar-link {
+  color: #d5e2dc;
+}
+
+html[data-theme="light"] .asems-sidebar-link:hover,
+html[data-theme="light"] .asems-sidebar-link.is-active {
+  color: #ffffff;
+  background-color: #24443b;
+}
+
+/* Error messages */
+html[data-theme="light"] .asems-error-panel {
+  background-color: #fff1f2;
+  border-color: #fecdd3;
+  color: #9f1239;
+}
+
+
+
+
+/* ASEMS AppLayout theme compatibility */
+.asems-app-shell {
+  min-height: 100vh;
+  background: var(--asems-bg);
+  color: var(--asems-text);
+}
+
+.asems-header {
+  background: var(--asems-surface);
+  color: var(--asems-text);
+  border-color: var(--asems-border);
+}
+
+.asems-main {
+  color: var(--asems-text);
+}
+
+.asems-themed-card {
+  background: var(--asems-surface);
+  color: var(--asems-text);
+  border: 1px solid var(--asems-border);
+}
+
+.asems-muted {
+  color: var(--asems-text-muted);
+}
+
+.asems-text-primary {
+  color: var(--asems-text);
+}
+
+.asems-profile-trigger {
+  color: var(--asems-text);
+}
+
+.asems-profile-trigger:hover {
+  background: var(--asems-surface-secondary);
+}
+
+.asems-profile-divider {
+  background: var(--asems-border);
+}
+
+.asems-footer {
+  border-color: var(--asems-border);
+  color: var(--asems-text-muted);
+}
+
+.asems-signout-button {
+  color: #b91c1c;
+}
+
+.asems-signout-button:hover {
+  background: #fef2f2;
+}
+
+html[data-theme='dark'] .asems-signout-button {
+  color: #fca5a5;
+}
+
+html[data-theme='dark'] .asems-signout-button:hover {
+  background: rgb(127 29 29 / 25%);
+}
+
+/* Sidebar stays dark in both themes */
+.asems-sidebar {
+  background: #0b2924;
+  color: #f5f7f6;
+  border-color: rgb(255 255 255 / 10%);
+}
+
+.asems-sidebar-heading {
+  color: #b8ccc5;
+}
+
+.asems-sidebar-link {
+  color: #d5e2dc;
+}
+
+.asems-sidebar-link:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 8%);
+}
+
+.asems-sidebar-link.is-active {
+  color: #fff;
+  background: rgb(255 255 255 / 12%);
+}
+
+.asems-sidebar-footer {
+  border-color: rgb(255 255 255 / 10%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asems-sidebar-link,
+  .asems-app-shell,
+  .asems-header,
+  .asems-themed-card,
+  .asems-profile-trigger {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   ASEMS theme coverage: Tailwind utility compatibility
+   Makes surfaces, borders, inputs and cards readable in both themes.
+   ========================================================= */
+.asems-theme-toggle {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--asems-border, #dce6e1);
+  border-radius: 9999px;
+  background: var(--asems-surface, #fff);
+  color: var(--asems-text, #17312b);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.asems-theme-toggle:hover { background: var(--asems-surface-secondary, #edf3f0); }
+
+.asems-language-control select {
+  max-width: 145px;
+  min-height: 38px;
+  border: 1px solid var(--asems-border, #dce6e1);
+  border-radius: 10px;
+  padding: 0.45rem 1.8rem 0.45rem 0.65rem;
+  background: var(--asems-surface, #fff);
+  color: var(--asems-text, #17312b);
+  font-size: 0.8rem;
+}
+.asems-language-control-compact select { min-height: 40px; }
+
+html[data-theme="dark"] {
+  --asems-bg: #0c1917;
+  --asems-surface: #142522;
+  --asems-surface-secondary: #1b322d;
+  --asems-text: #edf5f1;
+  --asems-text-muted: #a0b4ab;
+  --asems-border: #2c453d;
+  --asems-accent: #72c6aa;
+}
+
+/* Dark-mode overrides cover Tailwind classes used by existing pages, including
+   nested cards, form boxes, tables and borders without editing each page. */
+html[data-theme="dark"] .asems-app-shell .border,
+html[data-theme="dark"] .asems-app-shell [class*="border-slate-"],
+html[data-theme="dark"] .asems-app-shell [class*="border-gray-"] {
+  border-color: #2c453d !important;
+}
+html[data-theme="dark"] .asems-app-shell .bg-white,
+html[data-theme="dark"] .asems-app-shell [class~="bg-white/95"],
+html[data-theme="dark"] .asems-app-shell [class~="bg-white/90"],
+html[data-theme="dark"] .asems-app-shell .bg-slate-50,
+html[data-theme="dark"] .asems-app-shell .bg-gray-50,
+html[data-theme="dark"] .asems-app-shell .bg-slate-100,
+html[data-theme="dark"] .asems-app-shell .bg-gray-100 {
+  background-color: #142522 !important;
+}
+html[data-theme="dark"] .asems-app-shell [class*="divide-slate-"] > :not([hidden]) ~ :not([hidden]),
+html[data-theme="dark"] .asems-app-shell [class*="divide-gray-"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #2c453d !important;
+}
+html[data-theme="dark"] .asems-app-shell input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="dark"] .asems-app-shell select,
+html[data-theme="dark"] .asems-app-shell textarea {
+  border: 1px solid #38554a !important;
+  background-color: #10201d !important;
+  color: #edf5f1 !important;
+}
+html[data-theme="dark"] .asems-app-shell button[class*="bg-white"],
+html[data-theme="dark"] .asems-app-shell a[class*="bg-white"] {
+  border-color: #2c453d;
+}
+html[data-theme="dark"] .asems-app-shell .hover\:bg-slate-50:hover,
+html[data-theme="dark"] .asems-app-shell .hover\:bg-slate-100:hover,
+html[data-theme="dark"] .asems-app-shell .hover\:bg-gray-50:hover {
+  background-color: #1b322d !important;
+}
+html[data-theme="dark"] .asems-app-shell .text-slate-950,
+html[data-theme="dark"] .asems-app-shell .text-slate-900,
+html[data-theme="dark"] .asems-app-shell .text-slate-800,
+html[data-theme="dark"] .asems-app-shell .text-slate-700,
+html[data-theme="dark"] .asems-app-shell .text-gray-900,
+html[data-theme="dark"] .asems-app-shell .text-gray-800 {
+  color: #edf5f1 !important;
+}
+html[data-theme="dark"] .asems-app-shell .text-slate-600,
+html[data-theme="dark"] .asems-app-shell .text-slate-500,
+html[data-theme="dark"] .asems-app-shell .text-slate-400,
+html[data-theme="dark"] .asems-app-shell .text-gray-600,
+html[data-theme="dark"] .asems-app-shell .text-gray-500 {
+  color: #a0b4ab !important;
+}
+html[data-theme="dark"] .asems-app-shell .shadow-panel,
+html[data-theme="dark"] .asems-app-shell [class*="shadow-"] {
+  --tw-shadow-color: rgb(0 0 0 / 25%);
+}
+html[data-theme="dark"] .asems-app-shell .asems-sidebar {
+  background-color: #102b26 !important;
+  color: #f4f7f6 !important;
+}
+
+/* Login screen: the requested navy navigation, clean secondary bar and green accent. */
+.asems-login-topbar .asems-theme-toggle {
+  background: #ffffff;
+  color: #101827;
+  border-color: rgb(255 255 255 / 30%);
+}
+.asems-login-topbar .asems-language-control select {
+  background: #172235;
+  color: #ffffff;
+  border-color: rgb(255 255 255 / 25%);
+}
+.asems-login-page .asems-login-secondary { color: #52616d; }
+html[data-theme="dark"] .asems-login-page {
+  background: #0c1917 !important;
+}
+html[data-theme="dark"] .asems-login-page .asems-login-secondary {
+  background: #142522 !important;
+  color: #edf5f1 !important;
+  border-color: #2c453d !important;
+}
+html[data-theme="dark"] .asems-login-page .asems-login-card {
+  background: #142522 !important;
+  border-color: #2c453d !important;
+}
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel {
+  background: #142522 !important;
+  color: #edf5f1 !important;
+}
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .text-slate-950,
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .text-slate-900,
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .text-slate-800,
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .text-slate-700 {
+  color: #edf5f1 !important;
+}
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .border-slate-100,
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .border-slate-200 {
+  border-color: #2c453d !important;
+}
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .bg-slate-50,
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .bg-slate-50\/80,
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel .bg-slate-50\/60 {
+  background-color: #10201d !important;
+}
+html[data-theme="dark"] .asems-login-page .asems-login-form-panel input {
+  border-color: #38554a !important;
+  background: #10201d !important;
+  color: #edf5f1 !important;
+}
+
+/* Login screen theme support: retain the top navigation in navy in both themes. */
+html[data-theme="dark"] .asems-login-page {
+  background-color: #0c1917 !important;
+  color: #edf5f1;
+}
+
+html[data-theme="dark"] .asems-login-card,
+html[data-theme="dark"] .asems-login-form-panel {
+  background-color: #142522 !important;
+  color: #edf5f1 !important;
+  border-color: #2c453d !important;
+}
+
+html[data-theme="dark"] .asems-login-form-panel h2,
+html[data-theme="dark"] .asems-login-form-panel label,
+html[data-theme="dark"] .asems-login-form-panel .text-slate-700,
+html[data-theme="dark"] .asems-login-form-panel .text-slate-950 {
+  color: #edf5f1 !important;
+}
+
+html[data-theme="dark"] .asems-login-form-panel .text-slate-500,
+html[data-theme="dark"] .asems-login-form-panel .text-slate-400 {
+  color: #a0b4ab !important;
+}
+
+html[data-theme="dark"] .asems-login-form-panel input {
+  background-color: #10201d !important;
+  color: #edf5f1 !important;
+  border-color: #38554a !important;
+}
+
+html[data-theme="dark"] .asems-login-form-panel input::placeholder {
+  color: #91a79d !important;
+}
+
+html[data-theme="dark"] .asems-login-form-panel .bg-slate-50\/80,
+html[data-theme="dark"] .asems-login-form-panel .bg-slate-50\/60 {
+  background-color: #10201d !important;
+}
+
+html[data-theme="dark"] .asems-login-form-panel .border-slate-100 {
+  border-color: #2c453d !important;
+}
+
+html[data-theme="dark"] .asems-login-secondary {
+  background-color: #142522 !important;
+  color: #d5e2dc !important;
+  border-color: #2c453d !important;
+}
+
+html[data-theme="light"] .asems-login-card,
+html[data-theme="light"] .asems-login-form-panel {
+  background-color: #ffffff;
+  color: #17312b;
+}
+
+
+/* Public landing navigation follows the selected theme. The theme switcher and
+   language selector remain available only in the authenticated workspace. */
+.asems-landing-nav-link {
+  color: #334155;
+}
+.asems-landing-nav-link:hover {
+  background-color: rgba(16, 185, 129, 0.10);
+  color: #047857;
+}
+html[data-theme="dark"] .asems-landing-nav-link {
+  color: #e2e8f0;
+}
+html[data-theme="dark"] .asems-landing-nav-link:hover {
+  background-color: rgba(110, 231, 183, 0.12);
+  color: #6ee7b7;
+}
+html[data-theme="light"] .asems-landing-nav-link {
+  color: #334155;
+}
+html[data-theme="light"] .asems-landing-nav-link:hover {
+  background-color: rgba(16, 185, 129, 0.10);
+  color: #047857;
+}
+
+
+/* Public ASEMS landing page theme support */
+.asems-landing { background: var(--asems-bg, #f8fafc); color: var(--asems-text, #0f172a); transition: background-color 180ms ease, color 180ms ease; }
+.asems-landing-nav-link { color: #dbe7e3; }
+.asems-landing-nav-link:hover { color: #6ee7b7; background: rgb(255 255 255 / 8%); }
+html[data-theme="light"] .asems-landing { background: #f8fafc; color: #0f172a; }
+html[data-theme="dark"] .asems-landing { background: #0b1220; color: #e5eee9; }
+html[data-theme="dark"] .asems-landing .asems-public-subbar,
+html[data-theme="dark"] .asems-landing .asems-landing-features,
+html[data-theme="dark"] .asems-landing .asems-landing-footer { background: #111c2d; border-color: #29384b; color: #aebfca; }
+html[data-theme="dark"] .asems-landing .asems-landing-hero { background: #0b1220; }
+html[data-theme="dark"] .asems-landing .asems-landing-heading { color: #f1f5f9 !important; }
+html[data-theme="dark"] .asems-landing .asems-landing-copy { color: #b7c5d1 !important; }
+html[data-theme="dark"] .asems-landing .asems-landing-pill { background: #142b27; border-color: #245b4c; color: #d7f5e8; }
+html[data-theme="dark"] .asems-landing .asems-landing-preview { background: #142033; border-color: #2a3b50; }
+html[data-theme="dark"] .asems-landing .asems-landing-preview-top { border-color: #2a3b50; }
+html[data-theme="dark"] .asems-landing .asems-landing-tile { background: #0e1929; }
+html[data-theme="dark"] .asems-landing .asems-landing-row,
+html[data-theme="dark"] .asems-landing .asems-landing-feature-card { background: #111c2d; border-color: #2a3b50; color: #dbe7e3; }
+html[data-theme="dark"] .asems-landing .asems-landing-feature-card:hover { border-color: #258b69; }
+html[data-theme="dark"] .asems-landing .asems-landing-feature-card h3 { color: #f1f5f9; }
+html[data-theme="dark"] .asems-landing .asems-landing-feature-card p { color: #b7c5d1; }
+html[data-theme="dark"] .asems-landing .asems-public-subbar .text-emerald-700 { color: #6ee7b7; }
+html[data-theme="dark"] .asems-landing .asems-public-subbar .text-slate-300 { color: #64748b; }
+html[data-theme="dark"] .asems-role-modal { background: #202b3a; border-color: #3b4a5d; }
+html[data-theme="dark"] .asems-role-modal-body { background: #202b3a; }
+html[data-theme="dark"] .asems-role-modal-title { color: #f1f5f9; }
+html[data-theme="dark"] .asems-role-modal-copy,
+html[data-theme="dark"] .asems-role-modal-footer { color: #c0ccd7; }
+html[data-theme="dark"] .asems-role-modal-footer { border-color: #3b4a5d; background: #1b2635; }
+html[data-theme="dark"] .asems-role-option { background: #142a23; border-color: #3b4a4a; }
+html[data-theme="dark"] .asems-role-option:hover { background: #17372c; border-color: #22a06b; }
+html[data-theme="dark"] .asems-role-option-title { color: #f1f5f9; }
+html[data-theme="dark"] .asems-role-option-copy { color: #c0cfc9; }
+html[data-theme="dark"] .asems-role-option-icon { background: #174c37; color: #79e5a2; }
+@media (max-width: 640px) {
+  .asems-public-header { gap: .5rem; padding-left: .8rem; padding-right: .8rem; }
+  .asems-public-header nav { gap: .25rem; }
+  .asems-public-header nav > a { padding-left: .55rem; padding-right: .55rem; }
+  .asems-public-header nav > button:last-child { padding-left: .8rem; padding-right: .8rem; }
+}
+
+
+/* ==========================================
+   ASEMS WORKSPACE THEME COVERAGE
+   Applies the selected theme after sign-in to
+   existing pages, forms, tables, cards, menus,
+   dialogs, borders, and text without changing
+   the application's component logic.
+   ========================================== */
+
+html[data-theme="dark"] .asems-app-shell .bg-white,
+html[data-theme="dark"] .asems-app-shell .bg-white\/95,
+html[data-theme="dark"] .asems-app-shell .bg-white\/90,
+html[data-theme="dark"] .asems-app-shell .bg-slate-50,
+html[data-theme="dark"] .asems-app-shell .bg-slate-50\/70,
+html[data-theme="dark"] .asems-app-shell .bg-slate-100,
+html[data-theme="dark"] .asems-app-shell .bg-gray-50,
+html[data-theme="dark"] .asems-app-shell .bg-gray-100 {
+  background-color: #142522 !important;
+}
+
+html[data-theme="dark"] .asems-app-shell .border-slate-100,
+html[data-theme="dark"] .asems-app-shell .border-slate-200,
+html[data-theme="dark"] .asems-app-shell .border-slate-300,
+html[data-theme="dark"] .asems-app-shell .border-gray-100,
+html[data-theme="dark"] .asems-app-shell .border-gray-200,
+html[data-theme="dark"] .asems-app-shell .border-gray-300 {
+  border-color: #2c453d !important;
+}
+
+html[data-theme="dark"] .asems-app-shell .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+html[data-theme="dark"] .asems-app-shell .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #2c453d !important;
+}
+
+html[data-theme="dark"] .asems-app-shell .text-slate-950,
+html[data-theme="dark"] .asems-app-shell .text-slate-900,
+html[data-theme="dark"] .asems-app-shell .text-slate-800,
+html[data-theme="dark"] .asems-app-shell .text-slate-700,
+html[data-theme="dark"] .asems-app-shell .text-gray-900,
+html[data-theme="dark"] .asems-app-shell .text-gray-800,
+html[data-theme="dark"] .asems-app-shell .text-gray-700 {
+  color: #edf5f1 !important;
+}
+
+html[data-theme="dark"] .asems-app-shell .text-slate-600,
+html[data-theme="dark"] .asems-app-shell .text-slate-500,
+html[data-theme="dark"] .asems-app-shell .text-gray-600,
+html[data-theme="dark"] .asems-app-shell .text-gray-500 {
+  color: #a0b4ab !important;
+}
+
+html[data-theme="dark"] .asems-app-shell input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="dark"] .asems-app-shell select,
+html[data-theme="dark"] .asems-app-shell textarea {
+  background-color: #10201d !important;
+  color: #edf5f1 !important;
+  border-color: #38564b !important;
+}
+
+html[data-theme="dark"] .asems-app-shell input::placeholder,
+html[data-theme="dark"] .asems-app-shell textarea::placeholder {
+  color: #9aafa5 !important;
+}
+
+html[data-theme="dark"] .asems-app-shell table,
+html[data-theme="dark"] .asems-app-shell tbody,
+html[data-theme="dark"] .asems-app-shell tr {
+  color: #edf5f1;
+}
+
+html[data-theme="dark"] .asems-app-shell thead,
+html[data-theme="dark"] .asems-app-shell th {
+  background-color: #1b322d;
+  color: #c2d2ca;
+}
+
+html[data-theme="dark"] .asems-app-shell td {
+  border-color: #2c453d;
+}
+
+html[data-theme="dark"] .asems-app-shell [role="dialog"],
+html[data-theme="dark"] .asems-app-shell [role="menu"],
+html[data-theme="dark"] .asems-app-shell .dropdown-menu {
+  background-color: #142522;
+  color: #edf5f1;
+  border-color: #2c453d;
+}
+
+html[data-theme="light"] .asems-app-shell .bg-slate-50,
+html[data-theme="light"] .asems-app-shell .bg-slate-50\/70,
+html[data-theme="light"] .asems-app-shell .bg-slate-100,
+html[data-theme="light"] .asems-app-shell .bg-gray-50,
+html[data-theme="light"] .asems-app-shell .bg-gray-100 {
+  background-color: #f3f6f5;
+}
+
+html[data-theme="light"] .asems-app-shell .border-slate-100,
+html[data-theme="light"] .asems-app-shell .border-slate-200,
+html[data-theme="light"] .asems-app-shell .border-slate-300,
+html[data-theme="light"] .asems-app-shell .border-gray-100,
+html[data-theme="light"] .asems-app-shell .border-gray-200,
+html[data-theme="light"] .asems-app-shell .border-gray-300 {
+  border-color: #dce6e1;
+}
+
+html[data-theme="light"] .asems-app-shell input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="light"] .asems-app-shell select,
+html[data-theme="light"] .asems-app-shell textarea {
+  background-color: #ffffff;
+  color: #17312b;
+  border-color: #cbd9d2;
+}
+
+html[data-theme="light"] .asems-app-shell [role="dialog"],
+html[data-theme="light"] .asems-app-shell [role="menu"],
+html[data-theme="light"] .asems-app-shell .dropdown-menu {
+  background-color: #ffffff;
+  color: #17312b;
+  border-color: #dce6e1;
+}
+
+/* Active landing navigation: keep the green underline on the selected section. */
+.asems-landing-nav-link.is-active { color: #10b981 !important; }
+.asems-landing-nav-link.is-active::after { content: ""; position: absolute; left: 0; right: 0; bottom: 9px; height: 4px; border-radius: 9999px; background: #10b981; }
+
+/* Landing page follows the shared light/dark theme toggle. */
+html[data-theme="light"] .asems-landing {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+/* Keep the brand/login top bar and navigation dark in both themes. */
+html[data-theme="light"] .asems-landing .asems-public-shell {
+  background-color: #1b1e27 !important;
+  color: #ffffff !important;
+  border-color: #6b6258 !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18) !important;
+}
+html[data-theme="light"] .asems-landing .asems-public-header,
+html[data-theme="light"] .asems-landing .asems-public-subbar {
+  background-color: #1b1e27 !important;
+  color: #ffffff !important;
+  border-color: rgb(255 255 255 / 8%) !important;
+}
+html[data-theme="light"] .asems-landing .asems-public-header .text-white,
+html[data-theme="light"] .asems-landing .asems-public-header .text-slate-300,
+html[data-theme="light"] .asems-landing .asems-public-header button {
+  color: #f8fafc !important;
+}
+html[data-theme="light"] .asems-landing .asems-public-header button:hover {
+  color: #6ee7b7 !important;
+}
+html[data-theme="light"] .asems-landing .asems-theme-toggle {
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+  background-color: #252a35 !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-hero,
+html[data-theme="light"] .asems-landing .asems-landing-features,
+html[data-theme="light"] .asems-landing .asems-landing-footer {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-features {
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-heading { color: #0f172a !important; }
+html[data-theme="light"] .asems-landing .asems-landing-copy { color: #475569 !important; }
+html[data-theme="light"] .asems-landing .asems-landing-preview,
+html[data-theme="light"] .asems-landing .asems-landing-row,
+html[data-theme="light"] .asems-landing .asems-landing-feature-card {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-tile {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-preview-top { border-color: #e2e8f0 !important; }
+html[data-theme="light"] .asems-landing .asems-landing-pill {
+  background-color: rgba(255,255,255,.9) !important;
+  color: #334155 !important;
+  border-color: #a7f3d0 !important;
+}
+html[data-theme="light"] .asems-landing .asems-role-modal {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+html[data-theme="light"] .asems-landing .asems-role-modal-title { color: #0f172a !important; }
+html[data-theme="light"] .asems-landing .asems-role-modal-copy { color: #475569 !important; }
+html[data-theme="light"] .asems-landing .asems-role-option {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+html[data-theme="light"] .asems-landing .asems-role-option-title { color: #0f172a !important; }
+html[data-theme="light"] .asems-landing .asems-role-option-copy { color: #475569 !important; }
+html[data-theme="light"] .asems-landing .asems-role-modal-footer { border-color: #e2e8f0 !important; }
+
+/* ==========================================
+   ASEMS DARK THEME — HOVER TEXT CONTRAST FIX
+   Keep interactive text readable after login.
+   ========================================== */
+html[data-theme="dark"] .asems-app-shell :is(a, button, [role="button"], [role="menuitem"], label):is(:hover, :focus-visible) {
+  color: #edf5f1;
+}
+
+/* Tailwind hover text utilities that otherwise turn dark on dark surfaces. */
+html[data-theme="dark"] .asems-app-shell :is(
+  .hover\:text-slate-900,
+  .hover\:text-slate-800,
+  .hover\:text-slate-700,
+  .hover\:text-gray-900,
+  .hover\:text-gray-800,
+  .hover\:text-gray-700,
+  .hover\:text-black
+):hover {
+  color: #edf5f1 !important;
+}
+
+/* Keep hover backgrounds dark enough for light foreground text. */
+html[data-theme="dark"] .asems-app-shell :is(
+  .hover\:bg-white,
+  .hover\:bg-slate-50,
+  .hover\:bg-slate-100,
+  .hover\:bg-gray-50,
+  .hover\:bg-gray-100
+):hover {
+  background-color: #24443b !important;
+}
+
+/* Preserve the sidebar's established hover and active colors. */
+html[data-theme="dark"] .asems-app-shell .asems-sidebar-link:hover,
+html[data-theme="dark"] .asems-app-shell .asems-sidebar-link.is-active {
+  color: #ffffff !important;
+}
+
+/* Landing-page theme scope: theme switching affects only Home, Evaluation,
+   and Reports & Workflow content. The public top bar/navigation stay dark. */
+html[data-theme="light"] .asems-landing {
+  background-color: #f3f6f5 !important;
+  color: #17312b !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-hero,
+html[data-theme="light"] .asems-landing .asems-landing-features,
+html[data-theme="light"] .asems-landing .asems-landing-footer {
+  background-color: #f3f6f5 !important;
+  color: #17312b !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-heading { color: #17312b !important; }
+html[data-theme="light"] .asems-landing .asems-landing-copy { color: #60766e !important; }
+html[data-theme="light"] .asems-landing .asems-landing-preview,
+html[data-theme="light"] .asems-landing .asems-landing-feature-card,
+html[data-theme="light"] .asems-landing .asems-landing-row,
+html[data-theme="light"] .asems-landing .asems-landing-tile {
+  background-color: #ffffff !important;
+  color: #17312b !important;
+  border-color: #dce6e1 !important;
+}
+html[data-theme="light"] .asems-landing .asems-landing-pill {
+  background-color: #ffffff !important;
+  color: #40584f !important;
+  border-color: #cfe4d8 !important;
+}
+
+html[data-theme="dark"] .asems-landing {
+  background-color: #0c1917 !important;
+  color: #edf5f1 !important;
+}
+html[data-theme="dark"] .asems-landing .asems-landing-hero,
+html[data-theme="dark"] .asems-landing .asems-landing-features,
+html[data-theme="dark"] .asems-landing .asems-landing-footer {
+  background-color: #0c1917 !important;
+  color: #edf5f1 !important;
+  border-color: #2c453d !important;
+}
+html[data-theme="dark"] .asems-landing .asems-landing-heading { color: #edf5f1 !important; }
+html[data-theme="dark"] .asems-landing .asems-landing-copy { color: #a0b4ab !important; }
+html[data-theme="dark"] .asems-landing .asems-landing-preview,
+html[data-theme="dark"] .asems-landing .asems-landing-feature-card,
+html[data-theme="dark"] .asems-landing .asems-landing-row,
+html[data-theme="dark"] .asems-landing .asems-landing-tile {
+  background-color: #142522 !important;
+  color: #edf5f1 !important;
+  border-color: #2c453d !important;
+}
+html[data-theme="dark"] .asems-landing .asems-landing-pill {
+  background-color: #142522 !important;
+  color: #d5e2dc !important;
+  border-color: #2c453d !important;
+}
+/* Explicitly keep the branding/top navigation dark in both themes. */
+html[data-theme="light"] .asems-landing .asems-public-shell,
+html[data-theme="dark"] .asems-landing .asems-public-shell {
+  background-color: #1b1e27 !important;
+  color: #ffffff !important;
+  border-color: #6b6258 !important;
+}
+html[data-theme="light"] .asems-landing .asems-public-header,
+html[data-theme="light"] .asems-landing .asems-public-subbar,
+html[data-theme="dark"] .asems-landing .asems-public-header,
+html[data-theme="dark"] .asems-landing .asems-public-subbar {
+  background-color: #1b1e27 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   DARK THEME — HOVER CONTRAST + TABLE READABILITY
+   ========================================== */
+html[data-theme="dark"] .asems-app-shell table tbody tr:hover,
+html[data-theme="dark"] .asems-app-shell table tbody tr:hover > td,
+html[data-theme="dark"] .asems-app-shell [role="row"]:hover {
+  background-color: #203b33 !important;
+}
+
+html[data-theme="dark"] .asems-app-shell table tbody tr:hover td,
+html[data-theme="dark"] .asems-app-shell table tbody tr:hover th,
+html[data-theme="dark"] .asems-app-shell table tbody tr:hover td :is(
+  .text-slate-950, .text-slate-900, .text-slate-800, .text-slate-700,
+  .text-slate-600, .text-gray-900, .text-gray-800, .text-gray-700,
+  .text-gray-600, .text-black
+) {
+  color: #f1f7f4 !important;
+}
+
+html[data-theme="dark"] .asems-app-shell :is(
+  .hover\:text-slate-950, .hover\:text-slate-900, .hover\:text-slate-800,
+  .hover\:text-slate-700, .hover\:text-slate-600, .hover\:text-gray-900,
+  .hover\:text-gray-800, .hover\:text-gray-700, .hover\:text-gray-600,
+  .hover\:text-black
+):hover {
+  color: #f1f7f4 !important;
+}
+
+html[data-theme="dark"] .asems-app-shell :is(
+  .hover\:bg-white, .hover\:bg-white\/95, .hover\:bg-white\/90,
+  .hover\:bg-slate-50, .hover\:bg-slate-100, .hover\:bg-slate-200,
+  .hover\:bg-gray-50, .hover\:bg-gray-100, .hover\:bg-gray-200
+):hover {
+  background-color: #24443b !important;
+}
+
+/* ==========================================
+   PROFESSIONAL CONFIRMATION DIALOG
+   ========================================== */
+.asems-confirm-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgb(5 15 12 / 62%);
+  backdrop-filter: blur(5px);
+  animation: asems-confirm-fade-in 140ms ease-out;
+}
+.asems-confirm-dialog {
+  position: relative;
+  width: min(100%, 29rem);
+  padding: 1.75rem;
+  border: 1px solid #dce7e1;
+  border-radius: 1.25rem;
+  background: #fff;
+  color: #17312b;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 24%);
+  animation: asems-confirm-rise-in 180ms ease-out;
+}
+.asems-confirm-icon {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  border-radius: 1rem;
+}
+.asems-confirm-icon.is-danger { background: #fff0ef; color: #c2413a; }
+.asems-confirm-icon.is-neutral { background: #e9f7ef; color: #18734f; }
+.asems-confirm-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 0;
+  border-radius: .7rem;
+  background: transparent;
+  color: #64756e;
+}
+.asems-confirm-close:hover { background: #f1f5f3; color: #17312b; }
+.asems-confirm-dialog h2 { margin: 0; padding-right: 1.4rem; font-size: 1.12rem; font-weight: 750; letter-spacing: -.02em; }
+.asems-confirm-dialog p { margin: .7rem 0 0; color: #5f7169; font-size: .92rem; line-height: 1.65; white-space: pre-line; overflow-wrap: anywhere; }
+.asems-confirm-actions { display: flex; justify-content: flex-end; gap: .7rem; margin-top: 1.6rem; }
+.asems-confirm-cancel, .asems-confirm-accept { min-height: 2.65rem; padding: .65rem 1rem; border-radius: .7rem; font-size: .875rem; font-weight: 700; transition: background-color 150ms ease, transform 150ms ease; }
+.asems-confirm-cancel { border: 1px solid #d8e2dd; background: #fff; color: #40564d; }
+.asems-confirm-cancel:hover { background: #f2f6f4; }
+.asems-confirm-accept { border: 1px solid #146b4b; background: #16734f; color: #fff; }
+.asems-confirm-accept:hover { background: #105b3e; transform: translateY(-1px); }
+.asems-confirm-accept.is-danger { border-color: #bd3838; background: #c63e3e; }
+.asems-confirm-accept.is-danger:hover { background: #a92d2d; }
+html[data-theme="dark"] .asems-confirm-dialog { border-color: #38554a; background: #142522; color: #edf5f1; }
+html[data-theme="dark"] .asems-confirm-dialog p { color: #b3c4bc; }
+html[data-theme="dark"] .asems-confirm-close { color: #b3c4bc; }
+html[data-theme="dark"] .asems-confirm-close:hover { background: #24443b; color: #fff; }
+html[data-theme="dark"] .asems-confirm-cancel { border-color: #38554a; background: #1b322d; color: #edf5f1; }
+html[data-theme="dark"] .asems-confirm-cancel:hover { background: #28473d; }
+html[data-theme="dark"] .asems-confirm-icon.is-danger { background: #49252b; color: #ffb8b8; }
+html[data-theme="dark"] .asems-confirm-icon.is-neutral { background: #1d4034; color: #8de0b6; }
+@keyframes asems-confirm-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes asems-confirm-rise-in { from { opacity: 0; transform: translateY(8px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .asems-confirm-backdrop, .asems-confirm-dialog { animation: none; }
+}
+
+/* Requested scope: make every CSS border transparent without changing layout or other styling. */
+*,
+*::before,
+*::after {
+  border-color: transparent !important;
+}
