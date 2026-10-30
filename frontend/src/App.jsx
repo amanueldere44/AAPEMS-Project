@@ -135,6 +135,14 @@ export default function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    function handleUserUpdated(event) {
+      if (event.detail) setUser(event.detail);
+    }
+    window.addEventListener('asems:user-updated', handleUserUpdated);
+    return () => window.removeEventListener('asems:user-updated', handleUserUpdated);
+  }, []);
+
+  useEffect(() => {
     let active = true;
 
     async function restoreSession() {

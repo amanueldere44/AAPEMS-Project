@@ -1,4 +1,7 @@
+
 import { useState } from 'react';
+import ThemeToggle from '../components/ThemeToggle.jsx';
+import { getAssetUrl } from '../services/api.js';
 import { NavLink, Outlet } from 'react-router-dom';
 import { LanguageSwitcher } from '../i18n/LanguageLayer.jsx';
 import {
@@ -273,12 +276,16 @@ export default function AppLayout({ user, onLogout }) {
         }`}
       >
         <div className="flex h-[78px] shrink-0 items-center gap-3 border-b border-white/10 px-6">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-500 text-white">
-            <GraduationCap size={23} />
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/20">
+            <img
+              src="/mylogo.png"
+              alt="Ambo University Logo"
+              className="h-full w-full rounded-full object-contain"
+            />
           </div>
 
           <div>
-            <div className="text-lg font-semibold tracking-wide">ASEMS</div>
+            <div className="text-lg font-semibold tracking-wide">AAPEMS</div>
             <div className="text-[11px] text-slate-300">
               AMBO UNIVERSITY
             </div>
@@ -347,7 +354,7 @@ export default function AppLayout({ user, onLogout }) {
           <div className="mt-3 rounded-xl bg-white/5 p-3">
             <div className="flex items-center gap-2 text-xs font-medium">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              ASEMS workspace
+              AAPEMS workspace
             </div>
             <p className="mt-1 text-[11px] leading-5 text-slate-400">
               Academic evaluation and reporting
@@ -374,11 +381,12 @@ export default function AppLayout({ user, onLogout }) {
               <span className="font-medium text-slate-800">Workspace</span>
             </div>
 
-            <div className="text-sm font-semibold sm:hidden">ASEMS</div>
+            <div className="text-sm font-semibold sm:hidden">AAPEMS</div>
           </div>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-4">
             <LanguageSwitcher />
+            <ThemeToggle />
             <div className="hidden text-right md:block">
               <p className="text-xs font-medium text-slate-500">
                 Signed in as
@@ -398,8 +406,14 @@ export default function AppLayout({ user, onLogout }) {
                 aria-label="Open user menu"
                 className="flex max-w-[220px] items-center gap-2 rounded-lg p-1.5 transition hover:bg-slate-50"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-white">
-                  {getInitials(user)}
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-navy-900 text-sm font-semibold text-white">
+                  {user?.profilePhoto ? (
+                    <img
+                      src={getAssetUrl(user.profilePhoto)}
+                      alt={`${user?.name || 'User'} profile`}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : getInitials(user)}
                 </span>
 
                 <span className="hidden min-w-0 text-left sm:block">
@@ -461,7 +475,7 @@ export default function AppLayout({ user, onLogout }) {
         </main>
 
         <footer className="asems-footer border-t border-slate-200 px-7 py-4 text-center text-xs text-slate-400">
-          ASEMS · Ambo University
+          AAPEMS · Ambo University
         </footer>
       </div>
     </div>

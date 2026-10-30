@@ -55,7 +55,7 @@ export async function loginUser(input) {
   const password = parsed.data.password;
 
   const [rows] = await pool.execute(
-    `SELECT id, name, email, password, role, status
+    `SELECT id, name, email, password, role, status, profile_photo
        FROM users
       WHERE email = ?
       LIMIT 1`,
@@ -111,6 +111,7 @@ export async function loginUser(input) {
       email: user.email,
       role: user.role,
       status: user.status,
+      profilePhoto: user.profile_photo ?? null,
     },
   };
 }
@@ -211,6 +212,23 @@ export async function updateProfile(userId, input, ipAddress = null) {
     entityType: 'user',
     entityId: Number(userId),
     details: { fields: ['phone', 'address'] },
+    ipAddress,
+  });
+
+  return getCurrentUser(userId);
+}
+export async function updateProfilePhoto(userId, profilePhoto, ipAddress = null) {
+  await pool.execute(
+    'UPDATE users SET profile_photo = ? WHERE id = ?',
+    [profilePhoto, Number(userId)],
+  );
+
+  await writeAudit(pool, {
+    userId: Number(userId),
+    action: 'auth.profile_photo_updated',
+    entityType: 'user',
+    entityId: Number(userId),
+    details: {},
     ipAddress,
   });
 

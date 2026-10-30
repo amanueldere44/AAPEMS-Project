@@ -112,6 +112,13 @@ const officialLinks = [
 
 const accessRoles = [
   {
+    title: 'Administrator',
+    role: 'admin',
+    description:
+      'Manage user accounts, roles, evaluation setup, and authorized system administration.',
+    icon: ShieldCheck,
+  },
+  {
     title: 'Students',
     role: 'student',
     description: 'Access student evaluation activities and assigned tasks.',
@@ -209,16 +216,16 @@ export default function LandingPage() {
             className="flex min-w-0 items-center gap-3"
             aria-label="ASEMS home"
           >
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center text-white">
-              <GraduationCap
-                size={39}
-                strokeWidth={1.8}
-                aria-hidden="true"
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full text-white">
+              <img
+                src="/mylogo.png"
+                alt="Ambo University Logo"
+                className="h-14 w-14 rounded-full object-cover"
               />
             </span>
             <span className="min-w-0">
               <span className="block text-xl font-extrabold tracking-[0.28em] text-white">
-                ASEMS
+                AAPEMS
               </span>
               <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300">
                 Ambo University
@@ -377,8 +384,12 @@ export default function LandingPage() {
               <div className="asems-landing-preview relative rounded-[2rem] border border-white bg-white/90 p-5 shadow-[0_30px_90px_-35px_rgba(15,23,42,0.3)] backdrop-blur sm:p-7">
                 <div className="asems-landing-preview-top flex items-center justify-between border-b border-slate-100 pb-5">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
-                      <GraduationCap size={23} aria-hidden="true" />
+                    <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-emerald-50 text-emerald-700">
+                      <img
+                        src="/mylogo.png"
+                        alt="Ambo University Logo"
+                        className="h-11 w-11 rounded-full object-cover"
+                      />
                     </span>
                     <div>
                       <p className="asems-landing-heading font-bold text-slate-900">
@@ -673,12 +684,16 @@ export default function LandingPage() {
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_1fr] md:items-start">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
-                <GraduationCap size={26} />
+              <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-emerald-100 text-emerald-700">
+                <img
+                  src="/mylogo.png"
+                  alt="Ambo University Logo"
+                  className="h-11 w-11 rounded-full object-cover"
+                />
               </span>
               <div>
                 <p className="asems-landing-heading font-extrabold tracking-wide text-slate-900">
-                  ASEMS
+                  AAPEMS
                 </p>
                 <p className="asems-landing-copy mt-0.5 text-xs text-slate-500">
                   Ambo University
@@ -730,7 +745,7 @@ export default function LandingPage() {
         </div>
 
         <div className="mx-auto mt-8 flex max-w-7xl flex-col gap-2 border-t border-slate-200 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} ASEMS · Ambo University</span>
+          <span>© {new Date().getFullYear()} AAPEMS · Ambo University</span>
           <span>
             Academic and Administrative Staff Evaluation Management System
           </span>
@@ -756,7 +771,7 @@ export default function LandingPage() {
             <header className="flex items-start justify-between gap-4 bg-emerald-600 px-6 py-5 text-white sm:px-8 sm:py-6">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-100">
-                  Ambo University · ASEMS
+                  Ambo University · AAPEMS
                 </p>
                 <h2
                   id="role-picker-title"
@@ -783,7 +798,7 @@ export default function LandingPage() {
             <div className="asems-role-modal-body overflow-y-auto p-5 sm:p-7">
               <div className="mb-5">
                 <h3 className="asems-role-modal-title text-center text-xl font-bold sm:text-2xl">
-                  How will you use ASEMS?
+                  How will you use AAPEMS?
                 </h3>
                 <p className="asems-role-modal-copy mt-2 text-center text-sm">
                   Choose a category to continue to the login page.

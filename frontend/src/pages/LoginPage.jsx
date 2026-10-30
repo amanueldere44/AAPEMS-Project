@@ -1,10 +1,10 @@
+
 import { useState } from 'react';
 import { Navigate, Link, useLocation } from 'react-router-dom';
 import {
   ArrowRight,
   Eye,
   EyeOff,
-  GraduationCap,
   LockKeyhole,
   Mail,
   ShieldCheck,
@@ -15,11 +15,15 @@ import { loginRequest } from '../services/api.js';
 function Brand() {
   return (
     <div className="flex min-w-0 items-center gap-3">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-300/20 bg-emerald-300/10 text-emerald-300">
-        <GraduationCap size={25} aria-hidden="true" />
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-emerald-300/20 bg-emerald-300/10 overflow-hidden">
+        <img
+          src="/mylogo.png"
+          alt="Ambo University Logo"
+          className="h-9 w-9 rounded-full object-cover"
+        />
       </span>
       <span className="min-w-0">
-        <span className="block text-xl font-extrabold tracking-wide text-white">ASEMS</span>
+        <span className="block text-xl font-extrabold tracking-wide text-white">AAPEMS</span>
         <span className="block text-xs font-semibold text-slate-200">Ambo University</span>
         <span className="mt-0.5 block text-[11px] text-slate-400">Academic Affairs Staff Evaluation System</span>
       </span>
@@ -140,7 +144,7 @@ export default function LoginPage({ user, onLogin }) {
             </form>
           </div>
         </section>
-        <p className="mt-6 text-center text-xs text-slate-500">ASEMS · Ambo University</p>
+        <p className="mt-6 text-center text-xs text-slate-500">AAPEMS · Ambo University</p>
       </div>
     </main>
   );

@@ -1,4 +1,6 @@
 import express from 'express';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
@@ -25,6 +27,11 @@ import auditRoutes from './routes/audit.routes.js';
 import coursesRoutes from './routes/courses.routes.js';
 import translationRoutes from './routes/translation.routes.js';
 const app = express();
+const backendDirectory = path.dirname(fileURLToPath(import.meta.url));
+app.use('/uploads/profile-photos', express.static(
+  path.resolve(backendDirectory, '../uploads/profile-photos'),
+  { fallthrough: false, maxAge: '7d' },
+));
 
 app.disable('x-powered-by');
 app.use(helmet());

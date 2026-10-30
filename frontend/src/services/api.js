@@ -3,6 +3,12 @@ const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 const TOKEN_KEY = 'asems_token';
+const API_ORIGIN = API_BASE_URL.replace(/\/api\/?$/, '');
+
+export function getAssetUrl(path) {
+  if (!path) return '';
+  return /^https?:\/\//i.test(path) ? path : `${API_ORIGIN}${path.startsWith('/') ? '' : '/'}${path}`;
+}
 
 export function getToken() {
   return sessionStorage.getItem(TOKEN_KEY);
@@ -19,8 +25,9 @@ export function clearToken() {
 export async function apiRequest(path, options = {}) {
   const token = getToken();
 
+  const isFormData = typeof FormData !== 'undefined' && options.body instanceof FormData;
   const headers = {
-    'Content-Type': 'application/json',
+    ...(!isFormData ? { 'Content-Type': 'application/json' } : {}),
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
     ...(options.headers || {}),
   };

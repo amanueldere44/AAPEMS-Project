@@ -1,0 +1,28 @@
+.asems-language-control{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .55rem;border:1px solid #d6e0db;border-radius:.7rem;background:var(--asems-card,#fff);color:var(--asems-text,#17312b);font-size:.82rem;box-shadow:0 1px 2px rgb(0 0 0 / 5%)}
+.asems-language-control select{min-width:6.8rem;border:0;outline:0;background:transparent;color:inherit;font:inherit;cursor:pointer}
+.asems-confirm-backdrop{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:1rem;background:rgb(7 18 15 / 58%);backdrop-filter:blur(5px)}
+.asems-confirm-dialog{position:relative;width:min(100%,27rem);padding:1.65rem;border:1px solid #e5e7eb;border-radius:1.1rem;background:#fff;color:#172a27;box-shadow:0 24px 80px rgb(0 0 0 / 24%);animation:asems-dialog-in 160ms ease-out}
+.asems-confirm-close{position:absolute;top:.85rem;right:.85rem;display:grid;place-items:center;width:2rem;height:2rem;border:0;border-radius:.55rem;background:transparent;color:#64748b}
+.asems-confirm-close:hover{background:#f1f5f9;color:#0f172a}
+.asems-confirm-icon{display:grid;place-items:center;width:3rem;height:3rem;margin-bottom:1rem;border-radius:.9rem;background:#fff1f2;color:#be123c}
+.asems-confirm-icon-neutral{background:#eff6ff;color:#1d4ed8}
+.asems-confirm-dialog h2{margin:0;padding-right:1.5rem;font-size:1.15rem;font-weight:750;letter-spacing:-.02em}
+.asems-confirm-dialog p{margin:.65rem 0 0;color:#64748b;font-size:.9rem;line-height:1.55}
+.asems-confirm-item{margin-top:.9rem;padding:.7rem .8rem;border:1px solid #e2e8f0;border-radius:.65rem;background:#f8fafc;overflow-wrap:anywhere;font-size:.875rem;font-weight:600}
+.asems-confirm-actions{display:flex;justify-content:flex-end;gap:.65rem;margin-top:1.5rem}
+.asems-confirm-actions button{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:2.5rem;padding:.6rem .9rem;border-radius:.65rem;font-size:.875rem;font-weight:650;transition:background .15s ease,transform .15s ease}
+.asems-confirm-actions button:active{transform:translateY(1px)}
+.asems-confirm-actions button:disabled{opacity:.6;cursor:wait}
+.asems-confirm-cancel{border:1px solid #dbe3df;background:#fff;color:#334155}
+.asems-confirm-cancel:hover{background:#f8fafc}
+.asems-confirm-delete{border:1px solid #be123c;background:#be123c;color:#fff}
+.asems-confirm-delete:hover{background:#9f1239}
+.asems-confirm-primary{border:1px solid #14532d;background:#166534;color:#fff}
+@keyframes asems-dialog-in{from{opacity:0;transform:translateY(7px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.asems-confirm-dialog{animation:none}}
+html[data-theme="dark"] .asems-confirm-dialog{background:#142522;color:#edf5f1;border-color:#2c453d}
+html[data-theme="dark"] .asems-confirm-dialog p{color:#a0b4ab}
+html[data-theme="dark"] .asems-confirm-item{background:#10201d;border-color:#38554a}
+html[data-theme="dark"] .asems-confirm-cancel{background:#19312b;color:#edf5f1;border-color:#38554a}
+html[data-theme="dark"] .asems-confirm-cancel:hover,html[data-theme="dark"] .asems-confirm-close:hover{background:#24443b;color:#fff}
+html[data-theme="dark"] .asems-confirm-primary{background:#166534;color:#fff}

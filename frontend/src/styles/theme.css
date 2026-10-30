@@ -1213,3 +1213,38 @@ html body #root .asems-landing .asems-public-shell::after {
 html body #root .asems-landing .asems-public-subbar {
   background-image: linear-gradient(to bottom, rgb(24, 27, 34) 0, rgb(26, 29, 37) 5px, #1b1e27 10px) !important;
 }
+
+/* Form fields: keep the input / select / textarea outline visible (email, password, search, etc.).
+   All other borders in the project stay transparent. */
+html body #root input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]),
+html body #root select,
+html body #root textarea {
+  border-color: #cbd5e1 !important;
+}
+html body #root input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):focus,
+html body #root select:focus,
+html body #root textarea:focus {
+  border-color: #10b981 !important;
+}
+html[data-theme="dark"] body #root input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]),
+html[data-theme="dark"] body #root select,
+html[data-theme="dark"] body #root textarea {
+  border-color: #475569 !important;
+}
+html[data-theme="dark"] body #root input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):focus,
+html[data-theme="dark"] body #root select:focus,
+html[data-theme="dark"] body #root textarea:focus {
+  border-color: #34d399 !important;
+}
+/* Toolbars (search / filters + Refresh / Add buttons): never let the last button be cut off.
+   The row wraps onto a second line when it is too narrow, and buttons keep their text on one line. */
+.panel-card > div[class*="border-b"][class*="justify-between"],
+.panel-card > div[class*="border-b"][class*="justify-between"] > form {
+  flex-wrap: wrap;
+}
+.panel-card > div[class*="border-b"][class*="justify-between"] > div,
+.panel-card > div[class*="border-b"][class*="justify-between"] button,
+.panel-card > div[class*="border-b"][class*="justify-between"] .primary-button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
